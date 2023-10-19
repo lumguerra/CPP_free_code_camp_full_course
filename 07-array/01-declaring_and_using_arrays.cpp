@@ -17,7 +17,7 @@ int main(){
     double notes[] {5.6,4.0,23.4,6.6};
     double sum {};
 
-    for ( double n : notes ){
+    for (double n : notes){
         sum += n;
     }
     cout << "the sum of the notes is: " << sum << "\n";
