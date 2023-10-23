@@ -1,13 +1,14 @@
 #include <iostream>
+using namespace std;
 
 int main()
 {
     int *ptr {new int{89}};
 
     if(ptr){
-        std::cout << "valid ptr\n";
+        cout << "valid ptr\n";
     } else {
-        std::cout << "null_ptr\n";
+        cout << "null_ptr\n";
     }
 
     return 0;
