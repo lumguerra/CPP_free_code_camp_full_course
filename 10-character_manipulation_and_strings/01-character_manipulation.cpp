@@ -5,15 +5,20 @@ int main()
     char message[]{"My name is Lucas, and I'm learning c++"};
 
     std::cout << message << "\n";
+    size_t islower_count {0};
+    size_t isupper_count {0};
 
-    size_t blank_count {0};
-    for ( int i{0}; i < std::size(message); ++i ){        
-        if (isblank(message[i]) == 1){
-            std::cout << "Blank character found at index[" << i << "]\n";
-            blank_count++;
-        }              
-    }
-    std::cout << "Blank characters found: " << blank_count;
+    for ( size_t n : message){
+        if (std::islower(n)){
+            islower_count++;
+        }
+        if (std::isupper(n)){
+            isupper_count++;
+        }
+    }     
+
+    std::cout << "There are " << islower_count << "lower characters\n";
+    std::cout << "There are " << isupper_count << "upper characters\n";
     
     return 0;
 }
