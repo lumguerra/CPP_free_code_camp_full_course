@@ -1,18 +1,22 @@
 #include <iostream>
 using namespace std;
-template <typename T>
 
-T func(T a, T b){
-    return a + b;
-}
+auto maximum(const auto &a, const auto &b)
 
 int main(){
     
     int a{43};
     int b{45};
-    int c = func(a,b);
-
-    cout << c;
+    auto result = maximum(a, b);
+    cout << "The maximum is: " << result << endl;
+    cout << "a adress out: " << &a << "\n";
 
     return 0;
+}
+
+auto maximum(const auto &a, const auto &b)
+{
+    cout << "a adress in: " << &a << "\n";
+    return (a > b) ? a : b;
+    
 }
