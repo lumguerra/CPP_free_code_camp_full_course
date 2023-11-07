@@ -12,17 +12,13 @@ class Cylinder{
     public:
         //constructors
         Cylinder () = default;
-        Cylinder (double height_prm, double radius_prm){
-            height = height_prm;
-            radius = radius_prm;
-        }
-
+        Cylinder (double height_prm, double radius_prm);
         //functions
-        double volume(){
-            double volume;
-            volume = height * PI * height * radius;
-            return volume;
-        }
+        double volume();
+        void setter_radius(double radius_prm);
+        void setter_height(double height_prm);
+        double get_radius();
+        double get_height();
 
 };
 
