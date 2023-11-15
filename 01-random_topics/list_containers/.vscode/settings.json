@@ -3,5 +3,6 @@
         "xstring": "cpp",
         "iostream": "cpp",
         "iosfwd": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }

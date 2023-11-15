@@ -7,7 +7,7 @@ class YoutubeChannel {
     private:
         string Name;
         string ChannelName;
-        int SubscriberCount;
+        int SubscriberCount {0};
         list<string> PublishedVideoTitles; 
 
     public:
@@ -26,21 +26,17 @@ class YoutubeChannel {
         }
 };
 
+class CookingYoutubeChannel: YoutubeChannel{
+    CookingYoutubeChannel(string_view p_name ,string_view p_channel):YoutubeChannel(p_name, p_channel);
+};
+
 int main(){
 
-    list<string>Names;
+    YoutubeChannel Yt1("Jonny", "Coookers");
+    Yt1.GetInfo();
+    CookingYoutubeChannel Cy1("Lucas", "Lucas Cooker");
+    Cy1.GetInfo();
 
-    Names.push_front("lucas");
-    Names.push_front("Sarah");
-    Names.push_back("Oswaldo");
-    Names.push_back("fabio");
-
-    list<string>::iterator itr;
-    itr = Names.begin();
-
-    for(itr; itr != Names.end(); itr++ ){
-        cout << *itr << "\n"; 
-    }
 
     return 0;
 }
