@@ -26,8 +26,9 @@ class YoutubeChannel {
         }
 };
 
-class CookingYoutubeChannel: YoutubeChannel{
-    CookingYoutubeChannel(string_view p_name ,string_view p_channel):YoutubeChannel(p_name, p_channel);
+class CookingYoutubeChannel: public YoutubeChannel{
+    public:
+    CookingYoutubeChannel(string_view p_name ,string_view p_channel):YoutubeChannel(p_name, p_channel){};
 };
 
 int main(){
