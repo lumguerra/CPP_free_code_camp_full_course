@@ -1,18 +1,17 @@
 #include "person.h"
 #include "engineer.h"
 #include <iostream>
-#include <string_view>
-
-using namespace std;
 
 Engineer::Engineer()
 {
-    std::cout << "Default constructor for Engineer called...\n";
+    std::cout << "Default constructor for Engineer called..." << std::endl;
 }
 
-Engineer::Engineer(string_view fullname, int age, const string_view address, int contract_count_param) : 
-    Person(fullname, age, address), contract_count (contract_count_param)
+Engineer::Engineer(std::string_view fullname,int age,
+    std::string_view address,int contract_count_param) : 
+Person(fullname,age,address),contract_count(contract_count_param)
 {
+    std::cout << "Custom constructor for Engineer called..." << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& out , const Engineer& operand){
@@ -27,3 +26,5 @@ std::ostream& operator<<(std::ostream& out , const Engineer& operand){
 Engineer::~Engineer()
 {
 }
+
+
