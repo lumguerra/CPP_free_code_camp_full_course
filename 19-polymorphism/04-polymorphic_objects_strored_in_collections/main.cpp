@@ -3,6 +3,7 @@
 #include "oval.h"
 #include "circle.h"
 
+using namespace std;
 
 int main(){
 
@@ -10,11 +11,10 @@ int main(){
     Oval oval1;
     Circle circle1;
 
-    Shape* shape_collection[]{&shape1, &oval1, &circle1};
+    int arr[3];
 
-    for( Shape* s_ptr : shape_collection){
-        s_ptr->draw();
-    }
+    cout << sizeof(shape1) << "\n";
+    cout << size(arr);
 
     return 0;
 }
