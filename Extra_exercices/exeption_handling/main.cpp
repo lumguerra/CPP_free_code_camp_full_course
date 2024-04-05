@@ -22,20 +22,34 @@ class Printer
                 std::cout << "Text printed. There are " << paper_count << " papers left\n";        
             }else
             {
-                throw "not enought papers!\n";
-            }           
+                throw __MCF_runtime_failure;
+            }          
         }
 };
 
-int main(){
-
+int main()
+{
     Printer printer1("HP deskjet 5050", 10);
 
-    printer1.print("Lorem ipsum doloren");
-    printer1.print("Lorem ipsum doloren");
-    printer1.print("Lorem ipsum doloren");
-    printer1.print("Lorem ipsum doloren");
-    printer1.print("Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren  Lorem ipsum doloren");
+    try{
+        printer1.print("Lorem ipsum doloren");
+        printer1.print("Lorem ipsum doloren");
+        printer1.print("Lorem ipsum doloren");
+        printer1.print("Lorem ipsum doloren");
+        printer1.print("Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren Lorem ipsum doloren  Lorem ipsum doloren");
+    } 
+    catch(const char* error_txt)
+    {
+        std::cout << "Error: " << error_txt;
+    }
+    catch(int e)
+    {
+        std::cout << "Error: " << e;
+    }
+    catch(...)
+    {
+        std::cout << "General error";
+    }
 
 
     return 0;
